@@ -14,14 +14,14 @@ if platform.system() != 'Linux':
 
 buck_path = find_executable('buck')
 
-if buck_path:
-    print("Found system buck installation")
-elif os.path.exists('./buck.pex'):
-    print("Found local buck.pex")
-else:
-    print("Getting Buck...")
-    os.system('curl -o buck.pex -L http://fs.csl.utoronto.ca/~mike/buck.pex') # Java11 Compatible build
-    os.system('chmod +x buck.pex')
+# if buck_path:
+#     print("Found system buck installation")
+# elif os.path.exists('./buck.pex'):
+#     print("Found local buck.pex")
+# else:
+#     print("Getting Buck...")
+#     os.system('curl -o buck.pex -L http://fs.csl.utoronto.ca/~mike/buck.pex') # Java11 Compatible build
+#     os.system('chmod +x buck.pex')
 
 with open('.buckconfig.local', 'w') as f:
     f.write('[cxx]\n')
